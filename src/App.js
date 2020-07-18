@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import Register from './Component/Register'
+import Login from './Component/Login'
 import './App.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import React,{Component} from 'react'
+import history from './Helper/history'
+import { Switch,Route,Router} from 'react-router-dom';
+import MoviePosts from './Container/Posts/MoviePosts'
+import Dropdown from './Component/Dropdown'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class  App extends Component {
+  render(){
+    return(
+      <div>
+    <Dropdown/>
+  <Router history={history}>
+  <Switch>
+  <Route exact path='/' component={Login}/>
+<Route path='/register'  component={Register}/>
+<Route path='/movieposts' component={MoviePosts}/>
+
+</Switch>
+</Router >
+</div>
+    ) 
+  }
 }
+
 
 export default App;

@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import LoaderSpinner from './Helper/LoaderSpinner'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <div>
     <App />
-  </React.StrictMode>,
+    <LoaderSpinner/>
+   </div>,
   document.getElementById('root')
 );
 
