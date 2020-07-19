@@ -6,13 +6,13 @@ import React,{Component} from 'react'
 import history from './Helper/history'
 import { Switch,Route,Router} from 'react-router-dom';
 import MoviePosts from './Container/Posts/MoviePosts'
-import Dropdown from './Component/Dropdown'
+import CompanyInfo from './Component/CompanyInfo'
 
 class  App extends Component {
   render(){
     return(
       <div>
-    <Dropdown/>
+    <CompanyInfo/>
   <Router history={history}>
   <Switch>
   <Route exact path='/' component={Login}/>

@@ -13,7 +13,7 @@ import {Link} from 'react-router-dom'
      
 
         this.state = {
-            email: '',
+            name: '',
             password:'',
             redirect:false
         }
@@ -22,8 +22,8 @@ import {Link} from 'react-router-dom'
 
    
 
-    onChangeEmail=(e)=> {
-        this.setState({ email: e.target.value })
+    onChangeName=(e)=> {
+        this.setState({ name: e.target.value })
     }
 
     onChangePassword=(e)=> {
@@ -33,7 +33,7 @@ import {Link} from 'react-router-dom'
       onSubmit=async (e)=> {
         e.preventDefault()
        const userData = JSON.parse(localStorage.getItem('user'));
-        await((this.state.email===userData.email) && (this.state.password===userData.password))?(this.setState({
+        await((this.state.name===userData.name && this.state.name!=="") && (this.state.password===userData.password && this.statepassword!==""))?(this.setState({
                 redirect:true
             })):this.setState({
                 redirect:false
@@ -46,6 +46,9 @@ if(this.state.redirect)
         
 }
 
+else{
+window.alert("Invalid credentions!!! New user  Please register")
+}
 
         }
     
@@ -62,8 +65,8 @@ if(this.state.redirect)
                 <form onSubmit={(e)=>this.onSubmit(e)}>
                     
                     <div className="form-group">
-                        <label>Email</label>
-                        <input type="email" className="form-control" value={this.state.email} onChange={(event)=>this.onChangeEmail(event)} />
+                        <label>Name</label>
+                        <input type="text" className="form-control" value={this.state.name} onChange={(event)=>this.onChangeName(event)} />
                     </div>
                     <div className="form-group">
                         <label>Password</label>

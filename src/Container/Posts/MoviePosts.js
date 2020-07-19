@@ -59,10 +59,9 @@ render(){
     }
 
     let posts1 = <p style={{ textAlign: 'center' }}>Something went wrong!</p>;
-console.log("hi")
     if(!this.state.error){
        posts1=this.state.posts.map((post)=>{
-       return   (  <DisplayPost
+       return   (  <DisplayPost id={post._id}
                     genre={post.genre}
                     views={post.pageViews}
                     voting={post.voting}
@@ -71,6 +70,10 @@ console.log("hi")
                     stars={post.stars[0]}
                     imp={post.poster}
                     vote={post.totalvoted}
+                    downVoted={post.downVoted}
+                    upVoted={post.upVoted}
+                    language={post.language}
+                    runtime={post.runTime}
                     
                     style={Post}/>)
 
