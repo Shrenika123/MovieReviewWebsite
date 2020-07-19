@@ -36,6 +36,7 @@ import {Link} from 'react-router-dom'
         e.preventDefault()
 
         localStorage.setItem('user',JSON.stringify(this.state))
+        window.alert("You have registered")
     }
 
     // React Life Cycle

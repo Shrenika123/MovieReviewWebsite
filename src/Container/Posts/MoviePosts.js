@@ -47,6 +47,16 @@ trackPromise(axios.post('https://cors-anywhere.herokuapp.com/https://hoblist.com
 
 
 render(){
+    const Post= {
+        width: "auto",
+        padding: "16px",
+        textalign: "center",
+        border: "1px solid #eee",
+        boxshadow: "0 2px 3px #ccc",
+        margin: "10px",
+        boxsizing: "border-box",
+        cursor: "pointer",
+    }
 
     let posts1 = <p style={{ textAlign: 'center' }}>Something went wrong!</p>;
 console.log("hi")
@@ -56,7 +66,13 @@ console.log("hi")
                     genre={post.genre}
                     views={post.pageViews}
                     voting={post.voting}
-                    title={post.title}/>)
+                    title={post.title}
+                    director={post.director[0]}
+                    stars={post.stars[0]}
+                    imp={post.poster}
+                    vote={post.totalvoted}
+                    
+                    style={Post}/>)
 
         } )}
     return(
