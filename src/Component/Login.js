@@ -28,6 +28,7 @@ import {Link} from 'react-router-dom'
 
     onChangePassword=(e)=> {
         this.setState({ password: e.target.value })
+        console.log("hi")
     }
 
       onSubmit=async (e)=> {
