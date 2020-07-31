@@ -4,7 +4,7 @@ import { usePromiseTracker } from "react-promise-tracker";
 
 
 const LoadingIndicator = props => {
-  const { promiseInProgress } = usePromiseTracker();
+  const { promiseInProgress } = usePromiseTracker({delay: 500});
 
   return promiseInProgress && 
    <div
@@ -16,7 +16,7 @@ const LoadingIndicator = props => {
         alignItems: "center"
       }}
     >
-      <Loader type="ThreeDots" color="#708090" height="20%" width="20%" />
+      <Loader type="TailSpin" color="#2BAD60" height="20%" width="20%" />
     </div>
 };
 

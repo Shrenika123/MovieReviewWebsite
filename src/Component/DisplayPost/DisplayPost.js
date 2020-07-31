@@ -58,7 +58,7 @@ const DisplayPost=(props)=>{
     
 
     const Post= {
-        width: "800px",
+        width: "400px",
         padding: "16px",
         textalign: "right",
         border: "1px solid #eee",
